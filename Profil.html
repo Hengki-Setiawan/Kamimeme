@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Kami Meme</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Poppins:wght@400;500;600&family=Inter:wght@400&family=Archivo:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .profile-page {
+            padding: 2rem 0;
+            background: #f8f9fa;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .profile-banner {
+            height: 200px;
+            background: #EF5845;
+            position: relative;
+        }
+
+        .profile-info-header {
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            overflow: visible;
+            min-height: 150px;
+        }
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: -75px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-header-details {
+            flex: 1;
+        }
+
+        .profile-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            color: #666;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: minmax(200px, 300px) 1fr;
+            gap: 2rem;
+        }
+
+        .profile-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .profile-stats-card, .profile-about-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #EF5845;
+        }
+
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .activity-tabs {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .tab.active {
+            color: #EF5845;
+            font-weight: 600;
+            border-bottom: 2px solid #EF5845;
+        }
+
+        .activity-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            /* min-height: 400px; */
+            min-height: auto;
+            overflow: auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .empty-state img {
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-info-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-meta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .activity-tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="Home.html" class="logo-item" style="text-decoration: none">
+                <img src="Gambar/Logo(Nav).png" alt="Logo" class="logo-image">
+                <div class="logo-text">Kami Meme</div>
+            </a>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+                    <button id="searchButton" class="search-button" aria-label="Search" title="Search" type="button" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#A4A0A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-items" id="navItems">
+                    <a href="Home.html" class="nav-link">Terbaru</a>
+                    <a href="Artikel.html" class="nav-link">Artikel</a>
+                    <a href="Kategori.html" class="nav-link">Categories</a>
+                    <a href="Login.html" class="nav-button">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+        <main class="profile-page">
+            <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 10px;">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-banner"></div>
+                <div class="profile-info-header">
+                    <img src="Gambar/Logo(Footer).png" alt="Profile" class="profile-avatar">
+                    <div class="profile-header-details">
+                        <h1 class="profile-name">hengki</h1>
+                        <div class="profile-meta">
+                            <span>📍 Location: Interwebs</span>
+                            <span>📅 Joined about 21 hours ago</span>
+                        </div>
+                        <a href="Edit profil.html" class="nav-button" style="padding: 0.75rem 2rem; min-width: 180px; text-align: center; display: inline-block;">Edit Your Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content" style="max-width: 900px; margin: 0 auto;">
+                <!-- Left Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-stats-card">
+                        <h2 class="card-title">Profile Stats</h2>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <span class="stat-label">Posts</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Comments</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Contributions</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-about-card">
+                        <h2 class="card-title">About Me</h2>
+                        <p class="about-text">No description provided.</p>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="container profile-main-content" style="max-width: 900px; margin: 0 auto;">
+                    <!-- Activity Tabs -->
+                    <div class="activity-tabs">
+                        <button class="tab active">Wall</button>
+                        <button class="tab">Activity</button>
+                        <button class="tab">Editorships</button>
+                        <button class="tab">Images</button>
+                        <button class="tab">Videos</button>
+                        <button class="tab">Forum Posts</button>
+                        <button class="tab">Favorites</button>
+                    </div>
+
+                    <!-- Activity Content -->
+                    <div class="activity-content">
+                        <div class="empty-state">
+                            <img src="Gambar/activ.png" alt="Empty State" class="empty-icon">
+                            <h3>No Activity Yet</h3>
+                            <p>Start contributing to see your activity here!</p>
+                            <button class="nav-button">+ Add a Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="Home.html">
+                    <img src="Gambar/Logo(Footer).png" alt="Footer Logo">
+                </a>
+                <p>© 2025 Kami Meme, Inc.<br>All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#" class="footer-link">Trending Memes</a>
+                    <a href="#" class="footer-link">Popular Categories</a>
+                    <a href="#" class="footer-link">Submit Your Meme</a>
+                    <a href="#" class="footer-link">Meme Generator</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <a href="#" class="footer-link">Kami Meme Community</a>
+                    <a href="#" class="footer-link">Meme Contests</a>
+                    <a href="#" class="footer-link">Meme Tutorials</a>
+                    <a href="#" class="footer-link">Meme Challenges</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#" class="footer-link">About Kami Meme</a>
+                    <a href="#" class="footer-link">Our Team</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navItems.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            // Don't close if clicking hamburger menu or nav items
+            if (event.target.closest('.hamburger-menu')) {
+                return;
+            }
+            
+            // Close if clicking outside nav
+            if (!event.target.closest('.nav-items')) {
+                navItems.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

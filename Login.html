@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kami Meme</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@700&family=Archivo:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="Home.html" class="logo-item" style="text-decoration: none">
+                <img src="Gambar/Logo(Nav).png" alt="Logo" class="logo-image">
+                <div class="logo-text">Kami Meme</div>
+            </a>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+                    <button id="searchButton" class="search-button" aria-label="Search" title="Search" type="button" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#A4A0A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-items" id="navItems">
+                    <a href="Home.html" class="nav-link">Terbaru</a>
+                    <a href="Artikel.html" class="nav-link">Artikel</a>
+                    <a href="Kategori.html" class="nav-link">Categories</a>
+                    <a href="Login.html" class="nav-button">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navItems.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            // Don't close if clicking hamburger menu or nav items
+            if (event.target.closest('.hamburger-menu')) {
+                return;
+            }
+            
+            // Close if clicking outside nav
+            if (!event.target.closest('.nav-items')) {
+                navItems.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Search button functionality
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                // Redirect to different pages based on keywords in the query
+                const lowerQuery = query.toLowerCase();
+                if (lowerQuery.includes('home')) {
+                    window.location.href = `Home.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('artikel')) {
+                    window.location.href = `Artikel.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('kategori') || lowerQuery.includes('category')) {
+                    window.location.href = `Kategori.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('login')) {
+                    window.location.href = `Login.html?search=${encodeURIComponent(query)}`;
+                } else {
+                    window.location.href = `Login.html?search=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+
+        // Optional: allow pressing Enter key to trigger search
+        document.getElementById('searchInput').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('searchButton').click();
+            }
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main class="login-page">
+        <div class="container">
+            <div class="login-layout">
+                <!-- Login Form -->
+                <div class="login-form-container">
+                    <div class="login-header">
+                        <h1>LOGIN</h1>
+                        <button class="signup-btn">Signup</button>
+                    </div>
+
+                    <form class="login-form" action="Profil.html">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="email" id="username" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-input">
+                        </div>
+
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox">
+                                <span>Remember me.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="login-btn" onclick="window.location.href='Profil.html'; return false;">Login</button>
+
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </form>
+                </div>
+
+                <!-- Login Artwork -->
+                <div class="login-artwork">
+                    <img src="Gambar/memefan.png" alt="Login Artwork">
+                    <p class="artwork-credit">Artwork by Hengki Setiawan</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="Home.html">
+                    <img src="Gambar/Logo(Footer).png" alt="Logo" class="footer-logo">
+                </a>
+                <p class="footer-text">© 2025 Kami Meme, Inc.<br>All rights reserved.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Trending Memes</a>
+                    <a href="#" class="footer-link">Popular Categories</a>
+                    <a href="#" class="footer-link">Submit Your Meme</a>
+                    <a href="#" class="footer-link">Meme Generator</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Community</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Kami Meme Community</a>
+                    <a href="#" class="footer-link">Meme Contests</a>
+                    <a href="#" class="footer-link">Meme Tutorials</a>
+                    <a href="#" class="footer-link">Meme Challenges</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Kami Meme</a>
+                    <a href="#" class="footer-link">Our Team</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

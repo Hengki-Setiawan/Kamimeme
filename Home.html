@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kami Meme</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@700&family=Baloo+Chettan+2:wght@700&family=Changa+One&family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="Home.html" class="logo-item" style="text-decoration: none">
+                <img src="Gambar/Logo(Nav).png" alt="Logo" class="logo-image">
+                <div class="logo-text">Kami Meme</div>
+            </a>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+<button id="searchButton" class="search-button" aria-label="Search" title="Search" type="button" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#A4A0A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+</button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-items" id="navItems">
+                    <a href="Home.html" class="nav-link">Terbaru</a>
+                    <a href="Artikel.html" class="nav-link">Artikel</a>
+                    <a href="Kategori.html" class="nav-link">Categories</a>
+                    <a href="Login.html" class="nav-button">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome guys</h1>
+                <p class="hero-text">Meme Chill Guy adalah meme yang menggambarkan sikap santai dalam menghadapi tekanan hidup. Meme ini populer di media sosial seperti TikTok dan Instagram.</p>
+                <a href="Isi Artikel.html" class="button button-primary">More...</a>
+            </div>
+            <div class="hero-image">
+                <img src="Gambar/Chill guy.png" alt="Hero Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Banner -->
+    <section class="search-banner">
+        <div class="container">
+            <h2 class="search-banner-title">Cari meme</h2>
+            <div class="search-banner-input">
+                <span>Laugh Your Way Through the Day</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Terbaru dari kami</h2>
+            <p class="section-subtitle">Meme yang Terbaru</p>
+            
+            <div class="article-grid">
+                <article class="article-card">
+                    <img src="Gambar/image 2.png" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <span class="article-tag">Meme-Worthy Moments</span>
+                        <h3 class="article-title"><a href="Isi Artikel.html" style="text-decoration: none; color: inherit;">It Was Made For Me This Is My Hole</a></h3>
+                        <p class="article-text">Meme ini berasal dari panel manga horor karya Junji Ito berjudul The Enigma of Amigara Fault. Dalam cerita tersebut, sebuah gempa bumi mengungkap deretan lubang berbentuk manusia di sisi tebing.</p>
+                        <a href="Isi Artikel.html" class="button button-primary">More...</a>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <div class="article-content">
+                        <span class="article-tag">Unleash Your Inner Meme Master</span>
+                        <h3 class="article-title"><a href="Isi Artikel.html" style="text-decoration: none; color: inherit;">Pathetic! I Wouldn't Even Keep You As a Slave in My Empire!</a></h3>
+                        <p class="article-text">Frasa ini diucapkan oleh Target Invincible, varian jahat dari karakter utama dalam seri komik Invincible dan adaptasi TV-nya di Amazon Prime.</p>
+                        <a href="Isi Artikel.html" class="button button-primary">More...</a>
+                    </div>
+                    <img src="Gambar/image 3.png" alt="Article Image" class="article-image">
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Trending Categories</h2>
+            <p class="section-subtitle">Categori yang sedang ramai</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="Gambar/culture.png" alt="Culture" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Culture</h3>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Gambar/event.png" alt="Event" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Event</h3>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Gambar/memem.png" alt="Memes" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Memes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Articles -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Trending Artikel</h2>
+            <p class="section-subtitle">Pencarian terbaanyak, lagi meta</p>
+            
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-content">
+                        <span class="article-tag">Meme-Worthy Moments</span>
+                        <h3 class="article-title"><a href="Isi Artikel.html" style="text-decoration: none; color: inherit;">27 Anti-Meme dan Lelucon yang Sebenarnya Masuk Akal</a></h3>
+                        <p class="article-text">Anti-meme adalah jenis meme yang menyajikan situasi atau gambar secara harfiah tanpa elemen humor atau kejutan, sering kali menjelaskan konteks meme tersebut secara langsung.</p>
+                        <a href="Isi Artikel.html" class="button button-primary">More...</a>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <img src="Gambar/spongebob.png" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="Isi Artikel.html" style="text-decoration: none; color: inherit;">Mengapa TikToker Memanggil SpongeBob 'Pagani'?</a></h3>
+                        <p class="article-text">Baru-baru ini, pengguna TikTok mulai menyebut SpongeBob SquarePants sebagai "Pagani" dan Patrick Star sebagai "Subaru".</p>
+                        <a href="Isi Artikel.html" class="button button-primary">More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="Home.html">
+                    <img src="Gambar/Logo(Footer).png" alt="Logo" class="footer-logo">
+                </a>
+                <p class="footer-text">© 2025 Kami Meme, Inc.<br>All rights reserved.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Trending Memes</a>
+                    <a href="#" class="footer-link">Popular Categories</a>
+                    <a href="#" class="footer-link">Submit Your Meme</a>
+                    <a href="#" class="footer-link">Meme Generator</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Community</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Kami Meme Community</a>
+                    <a href="#" class="footer-link">Meme Contests</a>
+                    <a href="#" class="footer-link">Meme Tutorials</a>
+                    <a href="#" class="footer-link">Meme Challenges</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Kami Meme</a>
+                    <a href="#" class="footer-link">Our Team</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navItems.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            // Don't close if clicking hamburger menu or nav items
+            if (event.target.closest('.hamburger-menu')) {
+                return;
+            }
+            
+            // Close if clicking outside nav
+            if (!event.target.closest('.nav-items')) {
+                navItems.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Search button functionality
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                // Redirect to different pages based on keywords in the query
+                const lowerQuery = query.toLowerCase();
+                if (lowerQuery.includes('home')) {
+                    window.location.href = `Home.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('artikel')) {
+                    window.location.href = `Artikel.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('kategori') || lowerQuery.includes('category')) {
+                    window.location.href = `Kategori.html?search=${encodeURIComponent(query)}`;
+                } else if (lowerQuery.includes('login')) {
+                    window.location.href = `Login.html?search=${encodeURIComponent(query)}`;
+                } else {
+                    window.location.href = `Artikel.html?search=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+
+        // Optional: allow pressing Enter key to trigger search
+        document.getElementById('searchInput').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('searchButton').click();
+            }
+        });
+    </script>
+</body>
+</html>

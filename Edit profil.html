@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Kami Meme</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@700&family=Archivo:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="Home.html" class="logo-item" style="text-decoration: none">
+                <img src="Gambar/Logo(Nav).png" alt="Logo" class="logo-image">
+                <div class="logo-text">Kami Meme</div>
+            </a>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Search" class="search-input" id="searchInput">
+                    <button id="searchButton" class="search-button" aria-label="Search" title="Search" type="button" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#A4A0A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-items" id="navItems">
+                    <a href="Home.html" class="nav-link">Terbaru</a>
+                    <a href="Artikel.html" class="nav-link">Artikel</a>
+                    <a href="Kategori.html" class="nav-link">Categories</a>
+                    <a href="Login.html" class="nav-button">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="edit-profile">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <h1>Edit Profile</h1>
+                <button class="back-button">
+                    <span class="arrow-left"></span>
+                    Back
+                </button>
+            </div>
+
+            <!-- Profile Navigation -->
+            <div class="profile-nav">
+                <a href="#" class="active">Profile</a>
+                <a href="#">Avatar</a>
+                <a href="#">General Settings</a>
+                <a href="#">Account</a>
+            </div>
+
+            <!-- Profile Info Card -->
+            <div class="profile-info-card">
+                <div class="info-header">User #3,590,015</div>
+                <div class="info-item">Login: hengki</div>
+                <div class="info-item">Display Name: hengki</div>
+                <div class="info-item">Joined: 03/09/25 10:18:20 AM</div>
+            </div>
+
+            <!-- Profile Form -->
+            <form class="profile-form">
+                <section class="form-section">
+                    <h2>Personal Information</h2>
+                    
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-input">
+                        <p class="help-text">Changing your first or last name will modify your display name and profile url.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aboutMe">About Me</label>
+                        <textarea id="aboutMe" class="form-input"></textarea>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Social Media Profiles</h2>
+                    <p class="help-text">Type in your username as it appears (case-sensitive) without any symbols or hyperlinks.</p>
+
+                    <div class="form-group">
+                        <label for="deviantart">DeviantArt</label>
+                        <input type="text" id="deviantart" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reddit">Reddit</label>
+                        <input type="text" id="reddit" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="steam">Steam</label>
+                        <input type="text" id="steam" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tumblr">Tumblr</label>
+                        <input type="text" id="tumblr" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="twitter">Twitter</label>
+                        <input type="text" id="twitter" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="youtube">YouTube</label>
+                        <input type="text" id="youtube" class="form-input">
+                    </div>
+                </section>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="Home.html">
+                    <img src="Gambar/Logo(Footer).png" alt="Logo" class="footer-logo">
+                </a>
+                <p class="footer-text">© 2025 Kami Meme, Inc.<br>All rights reserved.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Trending Memes</a>
+                    <a href="#" class="footer-link">Popular Categories</a>
+                    <a href="#" class="footer-link">Submit Your Meme</a>
+                    <a href="#" class="footer-link">Meme Generator</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Community</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Kami Meme Community</a>
+                    <a href="#" class="footer-link">Meme Contests</a>
+                    <a href="#" class="footer-link">Meme Tutorials</a>
+                    <a href="#" class="footer-link">Meme Challenges</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Kami Meme</a>
+                    <a href="#" class="footer-link">Our Team</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navItems.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navItems = document.getElementById('navItems');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            // Don't close if clicking hamburger menu or nav items
+            if (event.target.closest('.hamburger-menu')) {
+                return;
+            }
+            
+            // Close if clicking outside nav
+            if (!event.target.closest('.nav-items')) {
+                navItems.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
